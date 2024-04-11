@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Anime</title>
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Add Anime</h1>
+
+    <form th:action="@{/saveAnime}" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter title"
+                   required="required">
+        </div>
+        <div class="form-group">
+            <label for="score">Score</label>
+            <input type="number" class="form-control" id="score" name="score" placeholder="Enter score"
+                   required="required">
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select class="form-control" id="category" name="category">
+                <option th:each="category : ${categories}" th:value="${category.categoryId}" th:text="${category.name}">
+                    Category Name
+                </option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <a class="btn btn-secondary mt-3" th:href="@{/clothesList}">Back to Anime List</a>
+</div>
+</body>
+</html>

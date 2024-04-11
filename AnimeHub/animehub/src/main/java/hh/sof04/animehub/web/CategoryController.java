@@ -22,25 +22,25 @@ public class CategoryController {
         return "categoryList";
     }
 
-    @GetMapping("/addcategory")
+    @GetMapping("/addCategory")
     public String showAddCategoryForm(Model model) {
         model.addAttribute("category", new Category());
         return "addcategory";
     }
 
-    @PostMapping("/savecategory")
+    @PostMapping("/saveCategory")
     public String saveCategory(@ModelAttribute Category category) {
         categoryRepository.save(category);
         return "redirect:/categorylist";
     }
 
-    @PostMapping("/deletecategory/{categoryId}")
+    @PostMapping("/deleteCategory/{categoryId}")
     public String deleteCategory(@PathVariable Long categoryId) {
         categoryRepository.deleteById(categoryId);
         return "redirect:/categorylist";
     }    
 
-    @GetMapping("/editcategory/{categoryId}")
+    @GetMapping("/editCategory/{categoryId}")
     public String showEditCategoryForm(@PathVariable Long categoryId, Model model) {
         Category category = categoryRepository.findById(categoryId).orElseThrow(() -> new IllegalArgumentException("Invalid category Id:" + categoryId));
         model.addAttribute("category", category);

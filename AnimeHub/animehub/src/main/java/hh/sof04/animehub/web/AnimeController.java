@@ -13,10 +13,6 @@ import hh.sof04.animehub.domain.AnimeRepository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestBody;
-
 
 
 @Controller
