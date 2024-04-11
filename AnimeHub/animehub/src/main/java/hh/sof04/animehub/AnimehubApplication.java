@@ -37,18 +37,17 @@ public class AnimehubApplication {
 			animeRepository.save(new Anime("Frieren", 28, 9.78, drama));
 			animeRepository.save(new Anime("Solo Leveling", 13, 9.10, romance));
 
-			log.info("------------------------------");
-
 			log.info("Fetch Categories");
 			for (Category category : categoryRepository.findAll()) {
                 log.info(category.toString());
 
 			log.info("------------------------------");
+
             log.info("Fetch Animes");
             for (Anime anime : animeRepository.findAll()) {
                 log.info(anime.toString());
             	}
-				log.info("------------------------------");
+			log.info("------------------------------");
             }
 		};
 	}

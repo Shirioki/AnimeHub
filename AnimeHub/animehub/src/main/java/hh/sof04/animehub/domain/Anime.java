@@ -14,14 +14,14 @@ public class Anime {
     private Long id;
 
     private String title;
-    private String episodes;
+    private int episodes;
     private double score;
 
     @ManyToOne
     @JoinColumn(name = "categoryId")
     private Category category;
 
-    public Anime(String title, String episodes, double score, Category category) {
+    public Anime(String title, int episodes, double score, Category category) {
         this.title = title;
         this.episodes = episodes;
         this.score = score;
@@ -44,11 +44,11 @@ public class Anime {
         this.title = title;
     }
 
-    public String getEpisodes() {
+    public int getEpisodes() {
         return episodes;
     }
 
-    public void setEpisodes(String episodes) {
+    public void setEpisodes(int episodes) {
         this.episodes = episodes;
     }
 
