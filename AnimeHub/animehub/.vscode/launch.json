@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AnimehubApplication<animehub>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "hh.sof04.animehub.AnimehubApplication",
+            "projectName": "animehub",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
