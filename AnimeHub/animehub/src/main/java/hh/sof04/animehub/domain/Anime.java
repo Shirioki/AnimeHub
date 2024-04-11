@@ -21,6 +21,9 @@ public class Anime {
     @JoinColumn(name = "categoryId")
     private Category category;
 
+    public Anime() {
+    }
+
     public Anime(String title, int episodes, double score, Category category) {
         this.title = title;
         this.episodes = episodes;
