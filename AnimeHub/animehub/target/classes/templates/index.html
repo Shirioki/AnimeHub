@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <title>AnimeHub Website</title>
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css"
+        th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">AnimeHub</h1>
+        <h3 class="mt-3"> Welcome to the AnimeHub Website!</h3>
+
+        <a class="btn btn-success" th:href="@{/animelist}"
+        >Anime List</a>
+
+        <a class="btn btn-success" th:href="@{/categorylist}"
+        >Category List</a>
+
+    </div>
+</body>
+</html>
