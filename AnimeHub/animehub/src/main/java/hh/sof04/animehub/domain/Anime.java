@@ -1,5 +1,7 @@
 package hh.sof04.animehub.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -63,6 +65,7 @@ public class Anime {
         this.score = score;
     }
 
+    @JsonIgnore
     public Category getCategory() {
         return category;
     }
@@ -70,6 +73,7 @@ public class Anime {
     public void setCategory(Category category) {
         this.category = category;
     }
+    
     
     @Override
     public String toString() {

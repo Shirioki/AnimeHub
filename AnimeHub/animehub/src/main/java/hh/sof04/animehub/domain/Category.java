@@ -2,6 +2,8 @@ package hh.sof04.animehub.domain;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -48,6 +50,11 @@ public class Category {
 
     public void setAnimes(List<Anime> animes) {
         this.animes = animes;
+    }
+
+    @JsonIgnore
+    public List<Anime> getAnimeList() {
+        return animes;
     }
 
     @Override

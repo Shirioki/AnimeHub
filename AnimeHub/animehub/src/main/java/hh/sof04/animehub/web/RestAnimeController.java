@@ -15,6 +15,7 @@ public class RestAnimeController {
 
     @Autowired
     private AnimeRepository animeRepository;
+    
     @Autowired
     private CategoryRepository categoryRepository;
 
