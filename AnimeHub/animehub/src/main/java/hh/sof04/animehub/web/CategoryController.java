@@ -16,10 +16,10 @@ public class CategoryController {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    @GetMapping("/categoryList")
+    @GetMapping("/categorylist")
     public String GetCategories(Model model) {
         model.addAttribute("categories", categoryRepository.findAll());
-        return "categoryList";
+        return "categorylist";
     }
 
     @GetMapping("/addCategory")
@@ -34,16 +34,11 @@ public class CategoryController {
         return "redirect:/categorylist";
     }
 
-    @PostMapping("/deleteCategory/{categoryId}")
+    @GetMapping("/deleteCategory/{categoryId}")
     public String deleteCategory(@PathVariable Long categoryId) {
         categoryRepository.deleteById(categoryId);
         return "redirect:/categorylist";
+        
     }    
 
-    @GetMapping("/editCategory/{categoryId}")
-    public String showEditCategoryForm(@PathVariable Long categoryId, Model model) {
-        Category category = categoryRepository.findById(categoryId).orElseThrow(() -> new IllegalArgumentException("Invalid category Id:" + categoryId));
-        model.addAttribute("category", category);
-        return "editcategory";
-    }
 }
