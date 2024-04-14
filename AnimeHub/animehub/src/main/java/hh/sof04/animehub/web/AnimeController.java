@@ -34,11 +34,11 @@ public class AnimeController {
         return "animelist";
     }
 
-    @GetMapping("/addAnime")
+    @GetMapping("/addanime")
     public String AddNewAnime(Model model) {
         model.addAttribute("anime", new Anime());
         model.addAttribute("categories", categoryRepository.findAll());
-        return "addAnime";
+        return "addanime";
     }
     
     @PostMapping("/saveAnime")
@@ -54,12 +54,12 @@ public class AnimeController {
         return "redirect:/animelist";
     }
     
-    @GetMapping("/editAnime/{id}")
+    @GetMapping("/editanime/{id}")
     public String getMethodName(@PathVariable("id") Long animeId, Model model) {
         Anime anime = animeRepository.findById(animeId).get();
         model.addAttribute("anime", anime);
         model.addAttribute("categories", categoryRepository.findAll());
-        return "editAnime";
+        return "editanime";
     }
 
 }

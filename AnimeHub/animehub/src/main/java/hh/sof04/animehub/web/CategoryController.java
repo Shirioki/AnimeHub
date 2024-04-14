@@ -19,13 +19,8 @@ public class CategoryController {
     @GetMapping("/categorylist")
     public String GetCategories(Model model) {
         model.addAttribute("categories", categoryRepository.findAll());
-        return "categorylist";
-    }
-
-    @GetMapping("/addCategory")
-    public String showAddCategoryForm(Model model) {
         model.addAttribute("category", new Category());
-        return "addcategory";
+        return "categorylist";
     }
 
     @PostMapping("/saveCategory")
