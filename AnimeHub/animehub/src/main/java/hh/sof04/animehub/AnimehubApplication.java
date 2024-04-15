@@ -11,6 +11,8 @@ import hh.sof04.animehub.domain.Anime;
 import hh.sof04.animehub.domain.AnimeRepository;
 import hh.sof04.animehub.domain.Category;
 import hh.sof04.animehub.domain.CategoryRepository;
+import hh.sof04.animehub.domain.User;
+import hh.sof04.animehub.domain.UserRepository;
 
 @SpringBootApplication
 public class AnimehubApplication {
@@ -22,7 +24,7 @@ public class AnimehubApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(CategoryRepository categoryRepository, AnimeRepository animeRepository){
+	public CommandLineRunner demo(CategoryRepository categoryRepository, AnimeRepository animeRepository, UserRepository userRepository){
 		return (args) -> {
 
 			Category romance = new Category("Romance");
@@ -36,6 +38,11 @@ public class AnimehubApplication {
 			animeRepository.save(new Anime("One piece", 1100, 9.10, horror));
 			animeRepository.save(new Anime("Frieren", 28, 9.78, drama));
 			animeRepository.save(new Anime("Solo Leveling", 13, 9.10, romance));
+
+			User user1 = new User("user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER");
+			User user2 = new User("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN");
+			userRepository.save(user1);
+			userRepository.save(user2);
 
 			log.info("Fetch Categories");
 			for (Category category : categoryRepository.findAll()) {

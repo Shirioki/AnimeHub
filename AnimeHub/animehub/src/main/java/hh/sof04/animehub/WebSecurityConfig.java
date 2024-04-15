@@ -29,12 +29,12 @@ public class WebSecurityConfig{
         .authorizeHttpRequests(authorize -> authorize
         	.requestMatchers(antMatcher("/css/**")).permitAll() // Enable css when logged out
         	.requestMatchers(antMatcher("/signup")).permitAll()
-        	.requestMatchers(antMatcher("/saveuser")).permitAll()		
+        	.requestMatchers(antMatcher("/saveuser")).permitAll()
         	.anyRequest().authenticated()
        )
       .formLogin( formlogin -> formlogin
           .loginPage("/login")
-          .defaultSuccessUrl("/studentlist", true)
+          .defaultSuccessUrl("/index", true)
           .permitAll()
       )
       .logout(logout -> logout
